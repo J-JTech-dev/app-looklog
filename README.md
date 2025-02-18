@@ -16,9 +16,12 @@ flutter 3.27.3 dart 3.6.1
 
 ### 빌드 명령어
 $ fvm flutter build apk --release
+
 $ fvm flutter build apk --debug
 
+
 ### 디렉토리 구조
+```
 📦lib
  ┣ 📂apps
  ┃ ┗ 📂di
