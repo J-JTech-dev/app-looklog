@@ -23,4 +23,6 @@ class AppConfig {
   static double r(double value) {
     return (sizeW / designWidth) * value; // 반응형 radius
   }
+
+  static const List<Map<String,String>> menuItems = [{'name': '오늘의착장', 'url': 'assets/icons/today_icon.png'}, {'name': '사이즈노트', 'url': 'assets/icons/size_note_icon.png'}, {'name': '컬러매칭', 'url': 'assets/icons/color_matching_icon.png'}];
 }

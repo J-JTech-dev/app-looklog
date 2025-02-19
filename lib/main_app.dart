@@ -18,29 +18,12 @@ class _MainAppState extends ConsumerState<MainApp> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: BG_COLOR,
       body: Stack(
         children: [
           HomeApp(),
-          // GestureDetector(
-          //   onTap:() {
-          //     ref.read(menuProvider.notifier).toggleMenu();
-          //     print("클릭");
-          //     setState(() {});
-          //   },
-          //   child:
-            MenuWidget(),
-            // Align(
-            //   //메뉴 아이콘
-            //   alignment: Alignment.topLeft,
-            //   child: Padding(
-            //     padding: const EdgeInsets.only(top: 55, left: 23),
-            //     child:
-            //       MenuWidget(),
-            //   ),
-            // ),
-          // ),
+          MenuWidget(),
         ],
       ),
     );

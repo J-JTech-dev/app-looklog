@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: BLUE_2,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: h(14), horizontal: w(14)),
+                    padding: EdgeInsets.symmetric(vertical: h(13), horizontal: w(14)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
