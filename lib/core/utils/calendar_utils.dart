@@ -4,13 +4,18 @@ import '../../common/theme/colors.dart';
 import '../config/app_config.dart';
 
 class Event {
-  String title;
+  String imgUrl;
+  String content;
 
-  Event(this.title);
+  Event(this.imgUrl, this.content);
+}
+
+List<Event> getEventsForDay(day) {
+  return events[day] ?? [];
 }
 
 Map<DateTime, List<Event>> events = {
-  DateTime.utc(2025,2,19) : [Event('title3')],
+  DateTime.utc(2025,2,19) : [Event('assets/images/test_img_one.png', '저녁은 춥다.'),Event('assets/images/test_img_two.png', '아침은 덥다'),],
 };
 
 TextStyle calendarTextStyle(Color color) {

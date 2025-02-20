@@ -1,9 +1,15 @@
+import 'package:app_looklog/core/config/app_config.dart';
+import 'package:app_looklog/features/colormatching/color_matching_app.dart';
 import 'package:app_looklog/features/home/home_app.dart';
 import 'package:app_looklog/features/home/view/widget/menu_widget.dart';
+import 'package:app_looklog/features/sizenote/size_note_app.dart';
+import 'package:app_looklog/features/todaylook/today_look_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lottie/lottie.dart';
 
 import '../common/theme/colors.dart';
+import 'features/home/view/controller/menu_controller.dart';
 
 class MainApp extends ConsumerStatefulWidget {
   const MainApp({super.key});
@@ -12,16 +18,38 @@ class MainApp extends ConsumerStatefulWidget {
   ConsumerState<MainApp> createState() => _MainAppState();
 }
 
-//테스트커밋
 class _MainAppState extends ConsumerState<MainApp> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final selectedIndex = ref.watch(menuProvider).index;
+    // final isScreen = ref.watch(menuProvider.select((state) => state.screenInit)); // 변경 감지
+
+    // Future.microtask(() {
+    //깜빡이듯이 보여서 일단 뺀다
+    //   if (!isScreen) {
+    //     print('🟡 screenInitCheck 실행!');
+    //     ref.read(menuProvider.notifier).screenInitCheck();
+    //   }
+    // });
+    // print('isScreen $isScreen');
+
+    Widget selectScreen = (selectedIndex == -1) ? HomeApp() : (selectedIndex == 0) ? TodayLookApp() : (selectedIndex == 1) ? SizeNoteApp() : ColorMatchingApp();
+
+    return  Scaffold(
       backgroundColor: BG_COLOR,
       body: Stack(
         children: [
-          HomeApp(),
-          MenuWidget(),
+          // !isScreen ?
+          //     Center(
+          //       child: SizedBox(
+          //         width: AppConfig.w(50),
+          //         height: AppConfig.h(50),
+          //         child: Lottie.asset('assets/jsons/loading_one.json'),
+          //       ),
+          //     ):
+          selectScreen,
+          // HomeApp(),
+          const MenuWidget(),
         ],
       ),
     );

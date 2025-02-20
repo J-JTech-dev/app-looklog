@@ -1,26 +1,31 @@
 import 'package:app_looklog/core/config/app_config.dart';
 import 'package:app_looklog/features/home/view/widget/weather_image_widget.dart';
 import 'package:app_looklog/features/home/view/widget/weather_text_widget.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import '../../../../common/theme/colors.dart';
+import '../controller/menu_controller.dart';
 import '../widget/calendar_widget.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   final sizeW = AppConfig.sizeW;
   final sizeH = AppConfig.sizeH;
   final w = AppConfig.w;
   final h = AppConfig.h;
   final r = AppConfig.r;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   String getFormattedDate() {
     DateTime now = DateTime.now();
@@ -33,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return  Scaffold(
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             width: sizeW,
             height: sizeH,
             child: Column(
@@ -130,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: w(25), right: w(25)),
-                  child: const CalendarWidget(),
+                  child: const CalendarWidget(rowHeight: 42.0),
                 ),
               ],
             ),
