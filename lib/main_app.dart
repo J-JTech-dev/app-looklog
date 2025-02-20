@@ -12,7 +12,7 @@ class MainApp extends ConsumerStatefulWidget {
   ConsumerState<MainApp> createState() => _MainAppState();
 }
 
-//testpush
+//테스트커밋
 class _MainAppState extends ConsumerState<MainApp> {
   @override
   Widget build(BuildContext context) {
