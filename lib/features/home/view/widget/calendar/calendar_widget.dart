@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../../common/theme/colors.dart';
-import '../../../../core/utils/calendar_utils.dart';
-import '../controller/calendar_controller.dart';
+import '../../../../../common/theme/colors.dart';
+import '../../../../../core/utils/calendar_utils.dart';
+import '../../controller/calendar_controller.dart';
 
 class CalendarWidget extends ConsumerStatefulWidget {
   final double rowHeight;

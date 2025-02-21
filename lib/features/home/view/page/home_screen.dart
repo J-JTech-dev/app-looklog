@@ -1,12 +1,12 @@
 import 'package:app_looklog/core/config/app_config.dart';
-import 'package:app_looklog/features/home/view/widget/weather_image_widget.dart';
-import 'package:app_looklog/features/home/view/widget/weather_text_widget.dart';
+import 'package:app_looklog/features/home/view/widget/image/weather_image_widget.dart';
+import 'package:app_looklog/features/home/view/widget/text/weather_text_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import '../../../../common/theme/colors.dart';
 import '../controller/menu_controller.dart';
-import '../widget/calendar_widget.dart';
+import '../widget/calendar/calendar_widget.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});

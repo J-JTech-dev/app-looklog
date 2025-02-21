@@ -1,5 +1,4 @@
-import 'package:app_looklog/features/todaylook/view/list/today_look_item_list.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:app_looklog/features/todaylook/view/widget/list/today_look_item_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -8,8 +7,8 @@ import '../../../../common/theme/colors.dart';
 import '../../../../core/config/app_config.dart';
 import '../../../../core/utils/calendar_utils.dart';
 import '../../../home/view/controller/calendar_controller.dart';
-import '../../../home/view/controller/menu_controller.dart';
-import '../../../home/view/widget/calendar_widget.dart';
+import '../../../home/view/widget/calendar/calendar_widget.dart';
+import '../../data/models/today_item_model.dart';
 
 class TodayLookScreen extends ConsumerStatefulWidget {
   const TodayLookScreen({super.key});
@@ -76,7 +75,7 @@ class _TodayLookScreenState extends ConsumerState<TodayLookScreen> {
           GestureDetector(
             //오늘의 옷 추가 버튼
             onTap: () {
-              context.go('/insert');
+              context.go('/insert',extra: TodayItemModel(imageUrl: '', content: ''));
             },
             child: Align(
               alignment: Alignment.bottomRight,

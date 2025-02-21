@@ -1,7 +1,7 @@
 import 'package:app_looklog/core/config/app_config.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/theme/colors.dart';
+import '../../../../../common/theme/colors.dart';
 
 class WeatherTextWidget extends StatefulWidget {
   final String locationTxt;

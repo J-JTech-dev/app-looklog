@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../common/theme/colors.dart';
-import '../../../../core/config/app_config.dart';
+import '../../../../../common/theme/colors.dart';
+import '../../../../../core/config/app_config.dart';
 import '../list/menu_list.dart';
 
 

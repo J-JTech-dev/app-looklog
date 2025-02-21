@@ -1,22 +1,23 @@
-import 'package:app_looklog/features/sizenote/view/page/size_note_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common/theme/font_theme.dart';
+import 'size_note_router.dart';
 
-class SizeNoteApp extends StatefulWidget {
+class SizeNoteApp extends ConsumerStatefulWidget {
   const SizeNoteApp({super.key});
 
   @override
-  State<SizeNoteApp> createState() => _SizeNoteAppState();
+  ConsumerState<SizeNoteApp> createState() => _SizeNoteAppState();
 }
 
-class _SizeNoteAppState extends State<SizeNoteApp> {
+class _SizeNoteAppState extends ConsumerState<SizeNoteApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: FontTheme.themeData(context),
-      home: const SizeNoteScreen(),
+      routerConfig: ref.watch(sizeNoteRouterProvider),
     );
   }
 }

@@ -2,9 +2,9 @@ import 'package:app_looklog/core/config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../common/theme/colors.dart';
-import '../../../../main_app.dart';
-import '../controller/menu_controller.dart';
+import '../../../../../common/theme/colors.dart';
+import '../../../../../main_app.dart';
+import '../../controller/menu_controller.dart';
 
 
 class MenuList extends ConsumerStatefulWidget {
