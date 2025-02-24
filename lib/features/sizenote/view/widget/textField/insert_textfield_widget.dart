@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../../../common/theme/colors.dart';
 
-class SearchTextFieldWidget extends StatefulWidget {
-  const SearchTextFieldWidget({super.key});
+class InsertTextFieldWidget extends StatefulWidget {
+  const InsertTextFieldWidget({super.key});
 
   @override
-  State<SearchTextFieldWidget> createState() => _SearchTextFieldWidgetState();
+  State<InsertTextFieldWidget> createState() => _InsertTextFieldWidgetState();
 }
 
-class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
+class _InsertTextFieldWidgetState extends State<InsertTextFieldWidget> {
   late TextEditingController _controller;
 
   @override
@@ -33,7 +33,7 @@ class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
         fontWeight: FontWeight.w500,
       ),
       decoration: InputDecoration(
-          hintText: '아이템을 검색해보세요.',
+          hintText: '등록하세요.',
           hintStyle: Theme.of(context).textTheme.labelMedium?.copyWith(
             color: GRAY_2,
             fontWeight: FontWeight.w500,

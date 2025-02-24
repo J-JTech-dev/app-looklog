@@ -26,7 +26,7 @@ class _SearchButtonState extends ConsumerState<SearchButton> {
           ref.read(searchFilterIndexProvider.notifier).state = widget.index;
         },
         child: Container(
-          height: AppConfig.h(45),
+          height: AppConfig.h(35),
           decoration: BoxDecoration(
               color: searchIndex == widget.index ? WHITE : MAIN_COLOR,
               borderRadius: BorderRadius.all(
@@ -35,7 +35,7 @@ class _SearchButtonState extends ConsumerState<SearchButton> {
           ),
           child: Center(
             child: Text(widget.text, style: Theme.of(context).textTheme.labelMedium?.copyWith(color: searchIndex == widget.index ? MAIN_COLOR : WHITE,
-              fontWeight: searchIndex == widget.index ? FontWeight.w700 : FontWeight.w500
+              fontWeight: searchIndex == widget.index ? FontWeight.w700 : FontWeight.w400
             ),),
           ),
         ),

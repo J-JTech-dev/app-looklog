@@ -24,6 +24,7 @@ const Color SUB_COLOR_1 = Color(0XFFFFD700);
 const Color SUB_COLOR_2 = Color(0XFF81AAD1);
 const Color SUB_COLOR_3 = Color(0XFFF2F4F9);
 
+const Color WHITE_1 = Color(0XFFF8F8F8);
 //BLUE
 const Color BLUE_1 = Color(0XFFA8B9D9);
 const Color BLUE_2 = Color(0XFF2A4E6B);

@@ -48,7 +48,9 @@ class _LookCreateScreenState extends State<LookCreateScreen> {
                     onTap:() {
                       context.go('/');
                     },
-                    child: Image.asset('assets/icons/left_arrow_icon.png', width: AppConfig.w(25),height: AppConfig.h(25),),
+                    child: SizedBox(
+                        width: AppConfig.w(30),
+                        child: Image.asset('assets/icons/left_arrow_icon.png', width: AppConfig.w(12),height: AppConfig.h(20),)),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -60,7 +62,7 @@ class _LookCreateScreenState extends State<LookCreateScreen> {
                             contentPadding: EdgeInsets.zero, // 기본 패딩 제거
                             content: SizedBox(
                               width: AppConfig.w(314),
-                              child: DeletePopup()
+                              child: const DeletePopup()
                             )
                           );
                         },

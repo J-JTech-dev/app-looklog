@@ -2,6 +2,7 @@ import 'package:app_looklog/features/todaylook/view/widget/list/today_look_item_
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../common/theme/colors.dart';
 import '../../../../core/config/app_config.dart';
@@ -18,9 +19,12 @@ class TodayLookScreen extends ConsumerStatefulWidget {
 }
 
 class _TodayLookScreenState extends ConsumerState<TodayLookScreen> {
+  String today = '';
+
   @override
   void initState() {
     super.initState();
+    today = DateFormat('yyyy년 MM월 dd일').format(DateTime.now());
   }
 
   @override
@@ -75,12 +79,12 @@ class _TodayLookScreenState extends ConsumerState<TodayLookScreen> {
           GestureDetector(
             //오늘의 옷 추가 버튼
             onTap: () {
-              context.go('/insert',extra: TodayItemModel(imageUrl: '', content: ''));
+              context.go('/insert:$today',extra: TodayItemModel(imageUrl: '', content: ''));
             },
             child: Align(
               alignment: Alignment.bottomRight,
               child: Container(
-                width: AppConfig.w(49),
+                width: AppConfig.w(60),
                 height: AppConfig.h(54),
                 margin: EdgeInsets.only(right: AppConfig.w(30), bottom: AppConfig.h(30)),
                 decoration: BoxDecoration(

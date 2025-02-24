@@ -24,8 +24,8 @@ class DummyData {
   ];
 
   static const List<Map<String, dynamic>> itemList = [
-    {'title': '아우터명', 'brand': '브랜드명', 'size': '사이즈 후기', 'date': '25.02.01', 'img': ''},
-    {'title': '싱글코트', 'brand': '무신사', 'size': '정사이즈', 'date': '25.02.01', 'img': 'assets/images/test_img_three.png'},
-    {'title': '만일 아우터명이 길다면 어떻게보이나요', 'brand': '브랜드명이 길다면 길다면 길다면', 'size': '사이즈 후기', 'date': '25.02.01', 'img': 'assets/images/test_img_four.png'},
+    {'title': '아우터명', 'brand': '브랜드명', 'size': '사이즈 후기', 'date': '25.02.01', 'img': '', 'check': true},
+    {'title': '싱글코트', 'brand': '무신사', 'size': '정사이즈', 'date': '25.02.01', 'img': 'assets/images/test_img_three.png', 'check': false},
+    {'title': '만일 아우터명이 길다면 어떻게보이나요', 'brand': '브랜드명이 길다면 길다면 길다면', 'size': '사이즈 후기', 'date': '25.02.01', 'img': 'assets/images/test_img_four.png', 'check': true},
   ];
 }

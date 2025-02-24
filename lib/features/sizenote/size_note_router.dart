@@ -1,4 +1,5 @@
 import 'package:app_looklog/features/home/view/controller/menu_controller.dart';
+import 'package:app_looklog/features/sizenote/view/page/item_insert_screen.dart';
 import 'package:app_looklog/features/sizenote/view/page/item_screen.dart';
 import 'package:app_looklog/features/sizenote/view/page/size_note_screen.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,18 @@ GoRouter sizeNoteRouter(SizeNoteRouterRef ref) {
             child: ItemScreen(key: UniqueKey())
           );
         },
+        routes: [
+          GoRoute(
+            path: 'insert/:type',
+            pageBuilder: (context, state) {
+              return NoTransitionPage(
+                  child: ItemInsertScreen(key: UniqueKey(),
+                  type: state.pathParameters['type']!,
+                  )
+              );
+            },
+          ),
+        ]
       ),
 
     ],

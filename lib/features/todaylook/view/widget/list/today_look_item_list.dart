@@ -31,6 +31,7 @@ class _TodayLookItemListState extends ConsumerState<TodayLookItemList> {
         decoration: BoxDecoration(
           color: WHITE,
           borderRadius: BorderRadius.all(Radius.circular(AppConfig.r(8))),
+          border: Border.all(color: GRAY_3),
           boxShadow: [
             BoxShadow(
               blurRadius: AppConfig.r(4),
@@ -43,7 +44,7 @@ class _TodayLookItemListState extends ConsumerState<TodayLookItemList> {
           children: [
             Container(
                 width: AppConfig.sizeW,
-                height: AppConfig.h(188),
+                height: AppConfig.h(150),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(AppConfig.r(8))),
                 ),
@@ -52,7 +53,7 @@ class _TodayLookItemListState extends ConsumerState<TodayLookItemList> {
                     child: Image.asset(widget.imgUrl, fit: BoxFit.cover,)),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: AppConfig.h(11), horizontal: AppConfig.w(10)),
+              padding: EdgeInsets.symmetric(vertical: AppConfig.h(10), horizontal: AppConfig.w(10)),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(widget.content, style: Theme.of(context).textTheme.bodySmall?.copyWith(

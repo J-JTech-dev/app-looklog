@@ -22,19 +22,24 @@ class _DeletePopupState extends State<DeletePopup> {
         SizedBox(height: AppConfig.h(48)),
         Row(
           children: [
-            Expanded(
-              child: Container(
-                height: AppConfig.h(53),
-                decoration: BoxDecoration(
-                    color: SUB_COLOR_3,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(AppConfig.r(14)),
-                    )
-                ),
-                child: Center(
-                  child: Text(
-                    '아니오',
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(color: BRACK_3),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Expanded(
+                child: Container(
+                  height: AppConfig.h(53),
+                  decoration: BoxDecoration(
+                      color: SUB_COLOR_3,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(AppConfig.r(14)),
+                      )
+                  ),
+                  child: Center(
+                    child: Text(
+                      '아니오',
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: BRACK_3),
+                    ),
                   ),
                 ),
               ),

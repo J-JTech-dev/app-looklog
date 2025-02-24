@@ -3,6 +3,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../common/theme/colors.dart';
@@ -169,9 +170,14 @@ class _MenuWidgetState extends ConsumerState<MenuWidget> {
             child: Visibility(
               visible: openYn == false ? true: false,
               child: SizedBox(
-                width: AppConfig.w(23),
-                height: AppConfig.h(20),
-                child: Image.asset('assets/icons/menu_icon.png'),
+                width: AppConfig.w(50),
+                height: AppConfig.h(50),
+                child: Center(
+                  child: SizedBox(
+                      width: AppConfig.w(24),
+                      height: AppConfig.h(24),
+                      child: Image.asset('assets/icons/menu_icon.png',)),
+                ),
               ),
             ),
           ),

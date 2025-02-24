@@ -122,6 +122,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               color: WHITE,
                               fontWeight: FontWeight.w600
                             ),),
+                             SizedBox(height: AppConfig.h(8)),
                             Text('작년 오늘, 어떤 옷을 입었을까요?', style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: WHITE,
                                 fontWeight: FontWeight.w400
