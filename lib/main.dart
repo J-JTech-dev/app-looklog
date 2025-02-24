@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'core/config/app_config.dart';
+import 'features/login/login_app.dart';
 import 'main_app.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       home: Builder(
         builder: (context) {
           AppConfig.init(context); // 초기화
-          return const MainApp();
+          return const LoginApp();
         },
       ),
     );

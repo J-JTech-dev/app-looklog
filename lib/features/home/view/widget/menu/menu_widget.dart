@@ -1,4 +1,5 @@
 import 'package:app_looklog/features/home/view/controller/menu_controller.dart';
+import 'package:app_looklog/features/login/login_app.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -138,22 +139,31 @@ class _MenuWidgetState extends ConsumerState<MenuWidget> {
                 Align(
                   //로그아웃버튼
                   alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: AppConfig.w(115),bottom: AppConfig.h(39)),
-                    child: Row(
-                      children: [
-                        Text('로그아웃하기', style: TextStyle(
-                          color: GRAY_2,
-                          fontSize: AppConfig.w(15),
-                          fontWeight: FontWeight.w500,
-                        ),),
-                        SizedBox(width: AppConfig.w(19)),
-                        SizedBox(
-                          width: AppConfig.w(12),
-                          height: AppConfig.h(14),
-                          child: Image.asset('assets/icons/logout_icon.png'),
-                        )
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginApp()),
+                      );
+                      ref.read(menuProvider.notifier).toggleMenu();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(left: AppConfig.w(115),bottom: AppConfig.h(39)),
+                      child: Row(
+                        children: [
+                          Text('로그아웃하기', style: TextStyle(
+                            color: GRAY_2,
+                            fontSize: AppConfig.w(15),
+                            fontWeight: FontWeight.w500,
+                          ),),
+                          SizedBox(width: AppConfig.w(19)),
+                          SizedBox(
+                            width: AppConfig.w(12),
+                            height: AppConfig.h(14),
+                            child: Image.asset('assets/icons/logout_icon.png'),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 )
