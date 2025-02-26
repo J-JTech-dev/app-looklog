@@ -18,15 +18,15 @@ class _DeletePopupState extends State<DeletePopup> {
         SizedBox(height: AppConfig.h(16)),
         Text('알림', style: Theme.of(context).textTheme.titleMedium,),
         SizedBox(height: AppConfig.h(35)),
-        Text('삭제하시겠습니까?', style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: BRACK_3),),
+        Text('삭제하시겠습니까?', style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: BRACK_3,fontSize: AppConfig.r(18)),),
         SizedBox(height: AppConfig.h(48)),
         Row(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Expanded(
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   height: AppConfig.h(53),
                   decoration: BoxDecoration(

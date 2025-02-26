@@ -30,20 +30,23 @@ class _MenuListState extends ConsumerState<MenuList> {
       },
       child: Padding(
         padding:  EdgeInsets.only(left: AppConfig.w(30), bottom: widget.index == 2 ? 0 : AppConfig.h(23)),
-        child: Row(
-          children: [
-            Image.asset(widget.url, width: AppConfig.w(15),height: AppConfig.h(15),
-            color: selectedIndex == widget.index ? MAIN_COLOR: GRAY_2,
-            ),
-            SizedBox(width: AppConfig.w(5),),
-            Text(widget.label,
-              style: TextStyle(
-                color: selectedIndex == widget.index ? MAIN_COLOR: GRAY_2,
-                fontSize: 16,
-                fontWeight: selectedIndex == widget.index ? FontWeight.w700: FontWeight.w500,
+        child: SizedBox(
+          height: AppConfig.h(35),
+          child: Row(
+            children: [
+              Image.asset(widget.url, width: AppConfig.w(15),height: AppConfig.h(15),
+              color: selectedIndex == widget.index ? MAIN_COLOR: GRAY_2,
               ),
-            ),
-          ],
+              SizedBox(width: AppConfig.w(5),),
+              Text(widget.label,
+                style: TextStyle(
+                  color: selectedIndex == widget.index ? MAIN_COLOR: GRAY_2,
+                  fontSize: 16,
+                  fontWeight: selectedIndex == widget.index ? FontWeight.w700: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

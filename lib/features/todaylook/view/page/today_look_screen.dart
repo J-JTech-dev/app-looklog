@@ -79,7 +79,7 @@ class _TodayLookScreenState extends ConsumerState<TodayLookScreen> {
           GestureDetector(
             //오늘의 옷 추가 버튼
             onTap: () {
-              context.go('/insert:$today',extra: TodayItemModel(imageUrl: '', content: ''));
+              context.go('/insert/:$today',extra: TodayItemModel(imageUrl: '', content: ''));
             },
             child: Align(
               alignment: Alignment.bottomRight,

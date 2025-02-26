@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../common/theme/colors.dart';
+import '../../../todaylook/view/widget/popup/delete_popup.dart';
 import '../controller/size_note_controller.dart';
 import 'item_content_screen.dart';
 
@@ -46,10 +47,23 @@ class _ItemInsertScreenState extends ConsumerState<ItemInsertScreen> {
                         ),
                         Row(
                           children: [
-                            Image.asset('assets/icons/trash_icon.png', width: AppConfig.w(30),height: AppConfig.h(30),),
-                            SizedBox(width: AppConfig.w(20)),
-                            if (widget.type == 'edit')
-                              Image.asset('assets/icons/edit_icon.png',width: AppConfig.w(23),height: AppConfig.h(23),),
+                            GestureDetector(
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                                          contentPadding: EdgeInsets.zero, // 기본 패딩 제거
+                                          content: SizedBox(
+                                              width: AppConfig.w(314),
+                                              child: const DeletePopup()
+                                          )
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Image.asset('assets/icons/trash_icon.png', width: AppConfig.w(30),height: AppConfig.h(30),)),
                           ],
                         )
                       ],
@@ -71,7 +85,7 @@ class _ItemInsertScreenState extends ConsumerState<ItemInsertScreen> {
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(AppConfig.r(20)), topRight: Radius.circular(AppConfig.r(20)),)
                     ),
                     child: Padding(
-                      padding:  EdgeInsets.only(top: AppConfig.h(80)),
+                      padding:  EdgeInsets.only(top: AppConfig.h(50)),
                       child: ItemContentScreen(),
                     ),
                   )

@@ -17,6 +17,9 @@ class _LoginAppState extends ConsumerState<LoginApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: FontTheme.themeData(context),
+      // theme: ThemeData(
+      //   fontFamily: 'Pretendard',
+      // ),
       home: LoginScreen(),
     );
   }

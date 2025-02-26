@@ -17,6 +17,7 @@ const Color GRAY_9 = Color(0XFF70768A);
 const Color GRAY_10 = Color(0XFFF0F0F0);
 const Color GRAY_11 = Color(0XFF777777);
 const Color GRAY_12 = Color(0XFF666666);
+const Color GRAY_13 = Color(0xFFEFF1F4);
 
 //BG
 const Color BG_COLOR = Color(0XFFF4F5F8);

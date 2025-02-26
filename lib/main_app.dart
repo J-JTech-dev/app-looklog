@@ -38,7 +38,8 @@ class _MainAppState extends ConsumerState<MainApp> {
     Widget selectScreen = (selectedIndex == -1) ? HomeApp() : (selectedIndex == 0) ? TodayLookApp() : (selectedIndex == 1) ? SizeNoteApp() : ColorMatchingApp();
 
     return  Scaffold(
-      backgroundColor: BG_COLOR,
+      backgroundColor: GRAY_13,
+      resizeToAvoidBottomInset : false,
       body: Stack(
         children: [
           // !isScreen ?
@@ -50,7 +51,6 @@ class _MainAppState extends ConsumerState<MainApp> {
           //       ),
           //     ):
           selectScreen,
-          // HomeApp(),
           if (menuVisible)
           const MenuWidget(),
         ],

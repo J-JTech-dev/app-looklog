@@ -79,7 +79,7 @@ class _LookCreateScreenState extends State<LookCreateScreen> {
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    if (widget.imgUrl != null)
+                    if (widget.imgUrl != '')
                       Positioned.fill(
                         child: Image.asset(
                           widget.imgUrl!,
@@ -92,7 +92,7 @@ class _LookCreateScreenState extends State<LookCreateScreen> {
                       children: [
                         Image.asset('assets/images/edit_img.png',width: AppConfig.w(44),height: AppConfig.h(44),),
                         SizedBox(height: AppConfig.h(10),),
-                        if (widget.imgUrl == null)
+                        if (widget.imgUrl == '')
                         Text('사진을 넣어주세요.', style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: GRAY_6
                         ),)

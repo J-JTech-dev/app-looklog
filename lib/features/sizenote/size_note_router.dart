@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import 'view/page/item_detail_screen.dart';
+
 part 'size_note_router.g.dart';
 
 @riverpod
@@ -42,6 +44,14 @@ GoRouter sizeNoteRouter(SizeNoteRouterRef ref) {
           );
         },
         routes: [
+          GoRoute(
+            path: 'detail',
+            pageBuilder: (context, state) {
+              return NoTransitionPage(
+                  child: ItemDetailScreen(key: UniqueKey())
+              );
+            },
+          ),
           GoRoute(
             path: 'insert/:type',
             pageBuilder: (context, state) {

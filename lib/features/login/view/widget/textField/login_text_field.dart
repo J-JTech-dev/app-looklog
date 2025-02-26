@@ -1,6 +1,5 @@
 import 'package:app_looklog/features/login/view/controller/login_controller.dart';
 import 'package:app_looklog/main_app.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -106,7 +105,29 @@ class _LoginTextFieldState extends ConsumerState<LoginTextField> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MainApp()),
+              PageRouteBuilder(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = const Offset(1.0, 0);
+                  var end = Offset.zero;
+                  var curve = Curves.ease;
+                  var tween = Tween(
+                    begin: begin,
+                    end: end,
+                  ).chain(
+                    CurveTween(
+                      curve: curve,
+                    ),
+                  );
+                  return SlideTransition(
+                    position: animation.drive(tween),
+                    child: child,
+                  );
+                },
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    const MainApp(),
+                fullscreenDialog: false,
+              ),
             );
           },
           child: Container(

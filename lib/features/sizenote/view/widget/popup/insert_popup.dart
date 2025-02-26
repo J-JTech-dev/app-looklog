@@ -27,7 +27,7 @@ class _InsertPopupState extends State<InsertPopup> {
           padding: EdgeInsets.only(left: AppConfig.w(10)),
           decoration: BoxDecoration(
             color: WHITE_1,
-            border: Border.all(color: MAIN_COLOR),
+            border: Border.all(color: GRAY_6),
             borderRadius: BorderRadius.all(Radius.circular(AppConfig.r(5)))
           ),
           child: const InsertTextFieldWidget()
@@ -77,17 +77,6 @@ class _InsertPopupState extends State<InsertPopup> {
             ),
           ],
         )
-      ],
-    );
-      Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(height: AppConfig.h(16)),
-        Text('알림', style: Theme.of(context).textTheme.titleMedium,),
-        SizedBox(height: AppConfig.h(35)),
-        Text('삭제하시겠습니까?', style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: BRACK_3),),
-        SizedBox(height: AppConfig.h(48)),
-        
       ],
     );
   }

@@ -1,6 +1,8 @@
 import 'package:app_looklog/core/config/app_config.dart';
 import 'package:app_looklog/features/sizenote/view/widget/popup/insert_popup.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../common/theme/colors.dart';
@@ -86,28 +88,12 @@ class _TabBarWidgetState extends State<TabBarWidget> with SingleTickerProviderSt
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      AlertDialog(
-                          insetPadding: EdgeInsets.zero, // 마진 제거
-                          contentPadding: EdgeInsets.zero, // 기본 패딩 제거
-                          clipBehavior: Clip.antiAlias, // 디자인 깔끔하게
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppConfig.r(14))), // 모서리 둥글게
-                          content:  InsertPopup(title: tabController.index == 0 ? '카테고리' : tabController.index == 1 ? '브랜드' : '색상',),
-                      ),
-                      Container(
-                        width: AppConfig.w(70),
-                        height: AppConfig.h(63),
-                        margin: EdgeInsets.only(bottom: AppConfig.h(220)),
-                        padding: EdgeInsets.all(AppConfig.r(8)),
-                        decoration: BoxDecoration(
-                            color: WHITE_1,
-                            borderRadius: BorderRadius.all(Radius.circular(AppConfig.r(50)))
-                        ),
-                        child: Image.asset('assets/icons/insert_popup_icon.png'),
-                      ),
-                    ],
+                  return AlertDialog(
+                      insetPadding: EdgeInsets.zero, // 마진 제거
+                      contentPadding: EdgeInsets.zero, // 기본 패딩 제거
+                      clipBehavior: Clip.antiAlias, // 디자인 깔끔하게
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppConfig.r(14))), // 모서리 둥글게
+                      content:  InsertPopup(title: tabController.index == 0 ? '카테고리' : tabController.index == 1 ? '브랜드' : '색상',),
                   );
                 },
               );

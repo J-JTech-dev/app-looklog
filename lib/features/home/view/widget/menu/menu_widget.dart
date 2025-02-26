@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../common/theme/colors.dart';
 import '../../../../../core/config/app_config.dart';
@@ -143,7 +144,29 @@ class _MenuWidgetState extends ConsumerState<MenuWidget> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LoginApp()),
+                        PageRouteBuilder(
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            var begin = const Offset(-1.0, 0);
+                            var end = Offset.zero;
+                            var curve = Curves.ease;
+                            var tween = Tween(
+                              begin: begin,
+                              end: end,
+                            ).chain(
+                              CurveTween(
+                                curve: curve,
+                              ),
+                            );
+                            return SlideTransition(
+                              position: animation.drive(tween),
+                              child: child,
+                            );
+                          },
+                          pageBuilder: (context, animation, secondaryAnimation) =>
+                          LoginApp(),
+                          fullscreenDialog: false,
+                        ),
                       );
                       ref.read(menuProvider.notifier).toggleMenu();
                     },
@@ -176,16 +199,17 @@ class _MenuWidgetState extends ConsumerState<MenuWidget> {
             ref.read(menuProvider.notifier).toggleMenu();
           },
           child: Padding(
-            padding: EdgeInsets.only(left: AppConfig.w(23), bottom: AppConfig.h(700)),
+            padding: EdgeInsets.only(left: AppConfig.w(10), bottom: AppConfig.h(670)),
             child: Visibility(
               visible: openYn == false ? true: false,
-              child: SizedBox(
-                width: AppConfig.w(50),
+              child: Container(
+                width: AppConfig.w(80),
                 height: AppConfig.h(50),
+                padding: EdgeInsets.only(right: AppConfig.w(30)),
                 child: Center(
                   child: SizedBox(
-                      width: AppConfig.w(24),
-                      height: AppConfig.h(24),
+                      width: AppConfig.w(20),
+                      height: AppConfig.h(20),
                       child: Image.asset('assets/icons/menu_icon.png',)),
                 ),
               ),
